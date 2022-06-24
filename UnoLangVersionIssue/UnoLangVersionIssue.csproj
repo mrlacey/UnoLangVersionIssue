@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<!-- 
+		Change LangVersion to see different behavior
+		"latest" - works
+		"default" - works
+		"10" - works (but not really a valid value)
+		"10.0" - DOES NOT WORK BUT SHOULD
+		-->
+		<LangVersion>latest</LangVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Uno.UI" Version="4.2.6" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="UserControl1.xaml" />
+	  <Page Include="UserControl1.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </Page>
+	</ItemGroup>
+</Project>
